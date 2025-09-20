@@ -41,7 +41,6 @@ def positional_loss(out, real, sigma=0.1):
     return wdist
 
 lr = 1e-3
-
 MEL_DIM = 80
 epochs = 200
 
