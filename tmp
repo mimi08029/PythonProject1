@@ -1,0 +1,17 @@
+user gives audio + text + meta -> osustd map
+
+model take meta -> meta_emb
+
+model take audio + text -> latent
+
+model latent + meta_emb -> osu_map
+
+v1
+
+generate circles and maybe slider
+
+nodes -> nodes_emb
+nodes_emb -> lstm -> nodes_emb_big
+audio -> vencoder-> latent
+node_emb_big + latent -> lsa -> map
+)
