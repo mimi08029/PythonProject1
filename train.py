@@ -43,10 +43,10 @@ def positional_loss(out, real, sigma=0.1):
 lr = 1e-3
 
 MEL_DIM = 80
-epochs = 4000
+epochs = 200
 
 data_list = load_osu_maps()
-pairs = make_pairs(data_list, 1)
+pairs = make_pairs(data_list, 1000)
 
 dataset, dataloader = make_datasets(pairs=pairs, batch_size=4)
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
@@ -110,7 +110,7 @@ for epoch in range(1, epochs + 1):
             plt.imshow(alignment[0].detach().cpu().numpy())
             plt.show()
 
-        if epoch % 20 == 0:
+        if epoch % 5 == 0:
             torch.save(model.state_dict(), "t2.pt")
 
         optimizer.zero_grad()
